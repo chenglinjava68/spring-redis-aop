@@ -9,7 +9,7 @@
       
 ###使用
      
-```
+
 @ReadThroughAssignCache(namespace="okhjp_user", valueClass =User.class)
 	@Override
 	public User find(@ParameterValueKeyProvider String uid) {
@@ -79,6 +79,6 @@
 		return vo;
 	}
   
-```
+
         
         
