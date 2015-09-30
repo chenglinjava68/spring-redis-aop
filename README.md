@@ -3,13 +3,14 @@
 此项目是实现以aop的形式，以annotion方式在实现方法上添加redis缓存
      
 ### 注意：
-  1.如果用maven打成jar包引入，只需修改一下配置问题
+  1.如果用maven打成jar包引入，只需修改一下配置问题<br>
   2.也可将代码copy到您的项目中。但要修改一些代码和配置文件
+  3.对象要实现Serializable 不然不能序列化与反序列化
       
 ### 使用
 
 ```
-@ReadThroughAssignCache(namespace="okhjp_user", valueClass =User.class)
+        @ReadThroughAssignCache(namespace="okhjp_user", valueClass =User.class,expireTime = 100)
 	@Override
 	public User find(@ParameterValueKeyProvider String uid) {
 		System.out.println("query from db");
